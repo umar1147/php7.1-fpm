@@ -7,6 +7,10 @@ RUN apt-get update && \
 
 RUN apt-get install -y wget bash
 
+# Redis ext
+RUN pecl install redis-5.1.1 \
+	&& docker-php-ext-enable redis
+
 # Installk AWS SSM
 RUN wget https://github.com/Droplr/aws-env/raw/v0.4/bin/aws-env-linux-amd64 -O /bin/aws-env && \
   chmod +x /bin/aws-env
