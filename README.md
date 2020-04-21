@@ -1,6 +1,6 @@
-# PHP 7.3-fpm-stretch
+# PHP 7.3-fpm
 
-**Base image:** `php:7.3.17-fpm-stretch`
+**Base image:** `php:7.3.17-fpm`
 
 **WORKDIR:** `/www`
 
@@ -14,7 +14,7 @@ version: '3'
 
 services:
   app:
-    image: umar1147:php7.3-fpm-stretch
+    image: umar1147:php7.3-fpm
     volumes:
       - ./:/www
     env_file:

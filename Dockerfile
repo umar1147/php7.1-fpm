@@ -1,4 +1,4 @@
-FROM php:7.3.17-fpm-stretch
+FROM php:7.3-fpm
 
 WORKDIR /www
 
