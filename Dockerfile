@@ -5,7 +5,13 @@ WORKDIR /www
 RUN apt-get update && \
   apt-get upgrade -y
 
-RUN apt-get install -y wget bash
+RUN apt-get install -y wget bash zip \
+  && docker-php-ext-install pdo pdo_mysql \
+  && curl -sS https://getcomposer.org/installer \
+  | php -- --install-dir=/usr/local/bin --filename=composer
+
+# MySql ext
+RUN docker-php-ext-install pdo pdo_mysql
 
 # Redis ext
 RUN pecl install redis-5.1.1 \
