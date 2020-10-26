@@ -7,7 +7,7 @@ WORKDIR /www
 RUN apt-get update && \
   apt-get upgrade -y
 
-RUN apt-get install -y wget bash zip  zlib1g-dev libpng-dev \
+RUN apt-get install -y wget bash zip  zlib1g-dev libpng-dev git \
   && curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
