@@ -7,7 +7,7 @@ WORKDIR /www
 RUN apt-get update && \
   apt-get upgrade -y
 
-RUN apt-get install -y wget bash zip  zlib1g-dev libpng-dev git \
+RUN apt-get install -y wget bash zip  zlib1g-dev libpng-dev libzip-dev \
   && curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -15,7 +15,7 @@ RUN apt-get install -y wget bash zip  zlib1g-dev libpng-dev git \
 RUN docker-php-ext-install pdo pdo_mysql
 
 # GD ext
-RUN docker-php-ext-install gd
+RUN docker-php-ext-install gd zip
 
 # Redis ext
 RUN pecl install redis-5.1.1 \
