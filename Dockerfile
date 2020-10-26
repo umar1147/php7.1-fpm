@@ -1,5 +1,7 @@
 FROM php:7.3-fpm
 
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 WORKDIR /www
 
 RUN apt-get update && \
