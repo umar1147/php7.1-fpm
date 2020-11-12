@@ -1,6 +1,6 @@
-# PHP 7.3-fpm
+# PHP 7.1-fpm
 
-**Base image:** `php:7.3.17-fpm`
+**Base image:** `php:7.1-fpm`
 
 **WORKDIR:** `/www`
 
@@ -14,7 +14,7 @@ version: '3'
 
 services:
   app:
-    image: umar1147:php7.3-fpm
+    image: umar1147:php7.1-fpm
     volumes:
       - ./:/www
     env_file:
